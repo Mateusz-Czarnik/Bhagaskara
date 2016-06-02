@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="171" height="185" viewBox="0 0 171 185">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9f449b;
+        stroke: #9f449b;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Shape-x.svg" class="cls-1" d="M1076.23,712.136q-20.115-12.087-40.65-23.468t-20.12-34.85q0.42-23.469,0-46.937t20.12-34.85q20.535-11.382,40.65-23.468,20.13-12.086,40.24,0,20.13,12.086,40.65,23.468,20.535,11.382,20.12,34.85t0,46.937q0.4,23.467-20.12,34.85t-40.65,23.468Q1096.355,724.222,1076.23,712.136Z" transform="translate(-1011 -538)"/>
+</svg>
