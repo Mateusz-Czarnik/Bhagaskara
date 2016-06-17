@@ -883,6 +883,7 @@ section {
 .contact-method textarea {
   border: 1px solid grey;
   padding: 10px;
+  resize: vertical;
 }
 
 .contact-method button {

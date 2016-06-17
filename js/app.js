@@ -15,11 +15,11 @@ $(function() {
     var learnMoreBtn = $(".about-content").find("a");
     var ContentDiv = $(".about-content");
     var ContentTxtDiv = $(".about-content-text");
-    var ContentHidden = $(".about-content-text").find(".hidden");
+    var ContentHidden = ContentTxtDiv.find(".hidden");
 
     learnMoreBtn.on("click", function() {
-        ContentDiv.toggleClass("about-content-full").toggleClass("about-content");
-        ContentTxtDiv.toggleClass("about-content-text-full").toggleClass("about-content-text");
+        ContentDiv.toggleClass("about-content-full about-content");
+        ContentTxtDiv.toggleClass("about-content-text-full about-content-text");
         ContentHidden.toggleClass("hidden");
     });
 
@@ -83,22 +83,20 @@ $(function() {
             wasAnimated = true;
         }
 
-
         if ($(window).scrollTop() > stickyMenuTrigger) {
             stickyMenu.addClass("sticky");
         } else {
             stickyMenu.removeClass("sticky");
         }
+    }).on("resize", function() {
+        resizeSlider();
     });
 
     // Citations slider
 
-    var currentClickedElement = 0;
-
-    $(window).on("resize", function() {
-        resizeSlider();
-    });
     resizeSlider();
+
+    var currentClickedElement = 0;
 
     function resizeSlider() {
         var citSliderBtns = $(".slider-citations-btns").find("span");
@@ -127,7 +125,6 @@ $(function() {
     }
 
     // Portfolio gallery
-    var portfolioSection = $(".portfolio-section");
     var portfolioImages = $(".img-container").find("img");
     var portfolioOverlay = $('.galleryOverlay');
 
@@ -195,24 +192,27 @@ $(function() {
     var galleryImages = $(".img-container").find("figure");
 
     galleryButtons.on("click", function() {
-        var galleryBtnTag = $(this).data("tag")
+        var clicked = $(this);
+        var galleryBtnTag = $(this).data("tag");
 
         event.preventDefault();
-        if ($(this).index() == 0) {
-            galleryImages.removeClass("hide")
+        if (clicked.index() == 0) {
+            galleryImages.removeClass("hide");
         } else {
             galleryImages.each(function() {
-                var imgTag = $(this).data("tag");
+                var img = $(this);
+                var imgTag = img.data("tag");
 
                 if (imgTag.indexOf(galleryBtnTag) == -1) {
-                    $(this).addClass("hide");
+                    img.addClass("hide");
                 } else {
-                    $(this).removeClass("hide");
+                    img.removeClass("hide");
 
                 }
             });
         }
     });
+
     var watchMoreBtn = $("#watch-more");
     var hiddenImages = $(".images-hidden");
 
