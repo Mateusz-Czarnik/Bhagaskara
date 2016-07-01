@@ -136,6 +136,10 @@ $(function() {
 
         if (isFullscreen == true) {
             $(this).removeClass("fullScreen");
+            $(this).delay(100).queue(function(next) {
+                $(this).addClass("enlarge");
+                next();
+            });
             portfolioOverlay.hide();
             clonedElement.remove();
             isFullscreen = false;
@@ -144,14 +148,18 @@ $(function() {
             stickyMenu.removeClass("sticky");
             clonedElement.add();
             $(this).addClass("fullScreen");
+            $(this).removeClass("enlarge");
             portfolioOverlay.show();
             isFullscreen = true;
         }
 
         $('html').one('click', function() {
             stickyMenu.addClass("sticky");
-
             portfolioImages.removeClass("fullScreen");
+            portfolioImages.delay(100).queue(function(next) {
+                $(this).addClass("enlarge");
+                next();
+            });
             portfolioOverlay.hide();
             clonedElement.remove();
             isFullscreen = false;
