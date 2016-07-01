@@ -838,14 +838,15 @@ section {
   width: 100%;
 }
 
-.img-container img:not(.fullScreen):hover {
-  opacity: 0.5;
-  transform: scale(1.3);
+.enlarge {
+  transition: all 0.7s ease-in;
 }
 
-.img-background:hover {
-  background: #565d67;
-  position: relative;
+.enlarge:hover {
+  transform: scale(1.2);
+}
+
+.img-background {
   overflow: hidden;
 }
 
